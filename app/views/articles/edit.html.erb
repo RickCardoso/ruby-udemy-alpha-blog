@@ -1,0 +1,7 @@
+<h1>Edit Article</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', articles_path %> |
+<%= link_to 'View', @article %> |
+<%= link_to 'Delete', @article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
