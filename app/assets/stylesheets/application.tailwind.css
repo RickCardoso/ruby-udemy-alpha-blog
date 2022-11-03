@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+
 
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .action-btn {
+    @apply flex p-1 rounded-md hover:bg-black hover:bg-opacity-20 overflow-hidden;
+  }
+
+  .btn {
+    @apply flex items-center justify-start gap-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-black hover:bg-opacity-20;
   }
 }
 
-*/
+
