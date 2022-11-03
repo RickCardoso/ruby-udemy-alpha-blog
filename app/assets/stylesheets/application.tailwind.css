@@ -8,7 +8,15 @@
   }
 
   .btn {
-    @apply flex items-center justify-start gap-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-black hover:bg-opacity-20;
+    @apply flex items-center justify-start gap-2 px-4 py-2 border border-white text-sm font-medium rounded-md text-white bg-transparent hover:bg-white hover:bg-opacity-20;
+  }
+
+  .btn-primary {
+    @apply border-purple-400 bg-purple-400 hover:bg-purple-600;
+  }
+
+  .btn-danger {
+    @apply border-red-400 bg-red-400 hover:bg-red-600;
   }
 
   .label {
@@ -17,13 +25,21 @@
 
   .input {
     @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-purple-400 sm:text-sm bg-transparent;
-
-    &__wrapper {
-      @apply my-2;
-    }
+  }
+  
+  .input__wrapper {
+    @apply my-4 flex flex-col gap-2;
   }
 
   .heading {
     @apply text-2xl font-semibold;
+  }
+
+  .field_with_errors .label {
+    @apply text-red-500;
+  }
+
+  .field_with_errors .input {
+    @apply border-red-500;
   }
 }

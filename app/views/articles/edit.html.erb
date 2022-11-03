@@ -1,7 +1,10 @@
-<h1>Edit Article</h1>
+<div class="flex justify-between items-center">
+  <h2 class="heading mb-4">Edit Article</h2>
 
-<%= render 'form' %>
+  <%= link_to raw(
+    render(IconComponent.new(symbol: 'delete')) + 'Delete'
+  ), @article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+</div>
 
-<%= link_to 'Back', articles_path %> |
-<%= link_to 'View', @article %> |
-<%= link_to 'Delete', @article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+<%= render 'form', back_link: articles_path %>
+
