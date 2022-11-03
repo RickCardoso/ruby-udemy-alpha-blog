@@ -13,12 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   </head>
 
-  <body class="bg-zinc-800 text-white">
+  <body class="bg-zinc-800 text-white min-h-screen flex flex-col justify-start items-stretch gap-8">
     <%= render 'layouts/navbar' %>
 
-    <main class="max-w-screen-xl mx-auto px-6">
+    <main class="max-w-screen-xl w-full mx-auto px-6 flex-auto flex">
       <%= render 'layouts/messages' %>
       <%= yield %>
     </main>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
