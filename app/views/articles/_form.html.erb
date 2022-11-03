@@ -1,12 +1,12 @@
 <%= form_with(model: @article, local: true) do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
+  <div class="input__wrapper">
+    <%= f.label :title, class: "label" %><br>
+    <%= f.text_field :title, class: "input" %>
+  </div>
+  <div class="input__wrapper">
+    <%= f.label :description, class: "label" %><br>
+    <%= f.text_area :description, class: "input" %>
+  </div>
 
   <% if @article.errors.any? %>
     <div id="error_explanation">

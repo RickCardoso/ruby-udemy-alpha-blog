@@ -16,9 +16,11 @@
   <body class="bg-zinc-800 text-white min-h-screen flex flex-col justify-start items-stretch gap-8">
     <%= render 'layouts/navbar' %>
 
-    <main class="max-w-screen-xl w-full mx-auto px-6 flex-auto flex">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+    <main class="max-w-screen-lg w-full mx-auto px-6 flex-auto flex">
+      <div class="flex-1">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
     </main>
 
     <%= render 'layouts/footer' %>

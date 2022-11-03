@@ -1,24 +1,22 @@
-<div class="max-w-3xl mx-auto flex-1">
-  <div class="flex justify-between items-center">
-    <h2 class="text-2xl">Articles listing page</h2>
+<div class="flex justify-between items-center">
+  <h2 class="heading">Articles listing page</h2>
 
-    <%= link_to raw(
-      render(IconComponent.new(symbol: 'post_add')) + "Create new Article"
-    ), new_article_path, class: "btn inline-flex" %>
-  </div>
-
-  <% @articles.each do |article| %>
-    <div class="relative rounded-xl bg-zinc-300 text-black overflow-hidden shadow-md my-8 w-full p-6">
-      <div class="flex justify-between items-center gap-4">
-        <h3 class="font-semibold text-lg"><%= article.title %></h3>
-        <div class="flex gap-1 -m-1">
-          <%= link_to render(IconComponent.new(symbol: 'open_in_full')), article, class: "action-btn" %>
-          <%= link_to render(IconComponent.new(symbol: 'edit')), edit_article_path(article), class: "action-btn" %>
-          <%= link_to render(IconComponent.new(symbol: 'delete')), article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "action-btn" %>
-        </div>
-      </div>
-
-      <p class="mt-2 max-h-40 text-ellipsis overflow-hidden"><%= article.description %></p>
-    </div>
-  <% end %>
+  <%= link_to raw(
+    render(IconComponent.new(symbol: 'post_add')) + "Create new Article"
+  ), new_article_path, class: "btn inline-flex" %>
 </div>
+
+<% @articles.each do |article| %>
+  <div class="relative rounded-xl bg-zinc-300 text-black overflow-hidden shadow-md my-8 w-full p-6">
+    <div class="flex justify-between items-center gap-4">
+      <h3 class="font-semibold text-lg"><%= article.title %></h3>
+      <div class="flex gap-1 -m-1">
+        <%= link_to render(IconComponent.new(symbol: 'open_in_full')), article, class: "action-btn" %>
+        <%= link_to render(IconComponent.new(symbol: 'edit')), edit_article_path(article), class: "action-btn" %>
+        <%= link_to render(IconComponent.new(symbol: 'delete')), article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "action-btn" %>
+      </div>
+    </div>
+
+    <p class="mt-2 max-h-40 text-ellipsis overflow-hidden"><%= article.description %></p>
+  </div>
+<% end %>
