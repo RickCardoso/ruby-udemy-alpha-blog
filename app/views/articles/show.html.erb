@@ -1,5 +1,8 @@
-<div class="flex justify-between items-center h-11">
-  <h2 class="heading"><%= @article.title %></h2>
+<div class="flex justify-between items-start">
+  <div>
+    <h2 class="heading"><%= @article.title %></h2>
+    <p class="text-purple-400">by <%= "#{@article.user.username} [#{@article.user.email}]" if @article.user %></p>
+  </div>
 
   <div class="flex gap-2">
     <%= link_to raw(
