@@ -31,6 +31,10 @@
     @apply my-4 flex flex-col gap-2;
   }
 
+  .form__actions {
+    @apply flex justify-between items-center mt-8;
+  }
+
   .heading {
     @apply text-2xl font-semibold;
   }

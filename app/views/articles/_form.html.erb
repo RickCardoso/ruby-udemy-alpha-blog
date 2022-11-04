@@ -8,21 +8,12 @@
     <%= f.text_area :description, class: "input", rows: 10 %>
   </div>
 
-  <% if @article.errors.any? %>
-    <div id="error_explanation" class="text-sm my-8">
-      <h3 class="text-red-400"><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h3>
-      <ul class="list-disc pl-6 my-1">
-        <% @article.errors.full_messages.each do |message| %>
-          <li class="my-1"><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render "shared/errors", obj: @article %>
 
-  <div class="flex justify-between items-center">
+  <div class="form__actions">
     <%= link_to raw(
       render(IconComponent.new(symbol: 'arrow_back')) + "Back"
-    ), back_link, class: "btn" %>
+    ), articles_path, class: "btn" %>
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
