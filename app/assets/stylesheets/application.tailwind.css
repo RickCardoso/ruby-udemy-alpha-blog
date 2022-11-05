@@ -8,7 +8,7 @@
   }
 
   .btn {
-    @apply flex items-center justify-start gap-2 px-4 py-2 border border-white text-sm font-medium rounded-md text-white bg-transparent hover:bg-white hover:bg-opacity-20;
+    @apply flex items-center justify-start gap-2 px-4 py-2 border border-white text-sm font-medium rounded-md text-white bg-transparent hover:bg-white hover:bg-opacity-20 hover:cursor-pointer;
   }
 
   .btn-primary {
