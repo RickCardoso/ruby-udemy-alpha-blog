@@ -1,12 +1,7 @@
 <% safe_actions = local_assigns[:actions].nil? ? [] : actions %>
 
 <div class="flex justify-between items-center h-12 mb-4">
-  <div>
-    <h2 class="heading"><%= heading %></h2>
-    <% unless local_assigns[:subheading].nil? %>
-      <p class="text-purple-400"><%= subheading %></p>
-    <% end %>
-  </div>
+  <h2 class="heading"><%= heading %></h2>
 
   <% unless safe_actions.empty? %>
     <div class="flex gap-2">

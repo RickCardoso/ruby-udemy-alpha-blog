@@ -1,4 +1,4 @@
-<%= render "shared/page_header", heading: @article.title, subheading: @article.user ? "by #{@article.user.username} [#{@article.user.email}]" : "", actions: [
+<%= render "shared/page_header", heading: @article.title, actions: [
   {
     title: "Edit",
     path: edit_article_path(@article),
@@ -13,6 +13,8 @@
     turbo_data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
   }
 ] %>
+
+<p class="text-sm text-purple-400 -mt-6">by <%= link_to "#{@article.user.username} [#{@article.user.email}]", @article.user %></p>
 
 <p class="my-6"><%= @article.description %></p>
 
