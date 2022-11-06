@@ -1,18 +1,18 @@
-<div class="flex justify-between items-start">
-  <div>
-    <h2 class="heading"><%= @article.title %></h2>
-    <p class="text-purple-400">by <%= "#{@article.user.username} [#{@article.user.email}]" if @article.user %></p>
-  </div>
-
-  <div class="flex gap-2">
-    <%= link_to raw(
-      render(IconComponent.new(symbol: 'edit')) + 'Edit'
-    ), edit_article_path(@article), class: "btn" %>
-    <%= link_to raw(
-      render(IconComponent.new(symbol: 'delete')) + 'Delete'
-    ), @article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-  </div>
-</div>
+<%= render "shared/page_header", heading: @article.title, subheading: @article.user ? "by #{@article.user.username} [#{@article.user.email}]" : "", actions: [
+  {
+    title: "Edit",
+    path: edit_article_path(@article),
+    icon: "edit",
+    class: "btn",
+  },
+  {
+    title: "Delete",
+    path: @article,
+    icon: "delete",
+    class: "btn btn-danger",
+    turbo_data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+  }
+] %>
 
 <p class="my-6"><%= @article.description %></p>
 

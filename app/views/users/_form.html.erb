@@ -17,7 +17,7 @@
   <div class="form__actions">
     <%= link_to raw(
       render(IconComponent.new(symbol: 'arrow_back')) + "Back"
-    ), root_path, class: "btn" %>
+    ), (@user.new_record? ? root_path : @user), class: "btn" %>
     <%= f.submit (@user.new_record? ? "Sign up" : "Save profile"), class: "btn btn-primary" %>
   </div>
 <% end %>

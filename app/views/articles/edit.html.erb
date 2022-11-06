@@ -1,10 +1,12 @@
-<div class="flex justify-between items-start">
-  <h2 class="heading">Edit Article</h2>
-
-  <%= link_to raw(
-    render(IconComponent.new(symbol: 'delete')) + 'Delete'
-  ), @article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-</div>
+<%= render "shared/page_header", heading: "Edit article", actions: [
+  {
+    title: "Delete",
+    path: @article,
+    icon: "delete",
+    class: "btn btn-danger",
+    turbo_data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+  }
+] %>
 
 <%= render 'form' %>
 

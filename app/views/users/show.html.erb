@@ -1,0 +1,29 @@
+<%= render "shared/page_header", heading: "#{@user.username}'s profile", actions: [
+  {
+    title: "Edit",
+    path: edit_user_path(@user),
+    icon: "edit",
+    class: "btn",
+  },
+  {
+    title: "Delete",
+    path: @user,
+    icon: "delete",
+    class: "btn btn-danger",
+    turbo_data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+  }
+] %>
+
+<div class="flex justify-start items-center mt-8">
+  <div class="flex-none rounded-full overflow-hidden mr-4">
+    <%= gravatar_for @user %>
+  </div>
+  <div class="flex-1 flex flex-col gap-1">
+    <h4 class="font-semibold text-lg"><%= @user.username %></h3>
+    <p class="text-purple-400"><%= @user.email %></p>
+  </div>
+</div>
+
+<h3 class="text-xl mt-8 mb-4">Articles written by <%= @user.username %></h3>
+
+<%= render "articles/articles_list", articles: @user.articles %>
