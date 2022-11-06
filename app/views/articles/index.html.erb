@@ -7,4 +7,6 @@
   }
 ] %>
 
+<%= will_paginate @articles, class: "pagination" %>
 <%= render "articles_list", articles: @articles %>
+<%= will_paginate @articles, class: "pagination" %>

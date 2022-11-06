@@ -50,4 +50,32 @@
   .navbar__link {
     @apply text-white block px-2 py-1 rounded-md hover:text-purple-400 hover:bg-white hover:bg-opacity-20;
   }
+
+  .pagination {
+    @apply flex gap-2 items-center justify-end text-sm my-8;
+  }
+
+  .pagination-item {
+    @apply border-2 border-white px-2 py-1 rounded-full opacity-80;
+  }
+
+  .current-page {
+    @apply text-purple-400 border-purple-400;
+  }
+
+  .pagination * {
+    @apply pagination-item not-italic;
+  }
+
+  .pagination a {
+    @apply hover:opacity-100;
+  }
+
+  .pagination em.current {
+    @apply border-2 current-page opacity-100;
+  }
+
+  .pagination .disabled {
+    @apply opacity-20 cursor-not-allowed;
+  }
 }
