@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :update, :destroy]
+
   def new
     @user = User.new
   end
@@ -10,6 +12,18 @@ class UsersController < ApplicationController
       redirect_to articles_path
     else  
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      flash[:notice] = "User was successfully updated"
+      redirect_to articles_path
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

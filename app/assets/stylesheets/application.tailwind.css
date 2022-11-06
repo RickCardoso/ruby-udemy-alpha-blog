@@ -46,4 +46,8 @@
   .field_with_errors .input {
     @apply border-red-500;
   }
+
+  .navbar__link {
+    @apply text-white block px-2 py-1 rounded-md hover:text-purple-400 hover:bg-white hover:bg-opacity-20;
+  }
 }
