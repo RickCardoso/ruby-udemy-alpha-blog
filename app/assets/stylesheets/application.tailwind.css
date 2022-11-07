@@ -48,7 +48,11 @@
   }
 
   .navbar__link {
-    @apply text-white block px-2 py-1 rounded-md hover:text-purple-400 hover:bg-white hover:bg-opacity-20;
+    @apply flex gap-1 text-white block px-2 py-1 rounded-md hover:text-purple-400 hover:bg-white hover:bg-opacity-20;
+  }
+
+  .navbar__link span {
+    @apply -mr-1;
   }
 
   .pagination {
@@ -78,4 +82,32 @@
   .pagination .disabled {
     @apply opacity-20 cursor-not-allowed;
   }
+
+  .flash-message {
+    @apply text-sm rounded-md overflow-hidden py-2 px-4 shadow-md;
+  }
+
+  .flash-message.notice {
+    @apply bg-black text-white;
+  }
+
+  .flash-message.success {
+    @apply bg-green-300 text-black;
+  }
+
+  .flash-message.alert {
+    @apply bg-red-400 text-black;
+  }
+
+  .dropdown {
+    @apply absolute right-0 z-10 mt-2 p-2 w-56 origin-top-right rounded-lg bg-black shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none;
+  }
+
+  .dropdown__button {
+    @apply navbar__link;
+  }
+
+  [class^="material-symbols"] {
+    font-size: 1em !important;
+  }	
 }

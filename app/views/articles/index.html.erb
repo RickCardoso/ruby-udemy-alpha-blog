@@ -1,11 +1,11 @@
-<%= render "shared/page_header", heading: "Articles listing page", actions: [
+<%= render "shared/page_header", heading: "Articles listing page", actions: logged_in? ? [
   {
     title: "Create new Article",
     path: new_article_path,
     icon: "post_add",
     class: "btn btn-primary"
   }
-] %>
+] : [] %>
 
 <%= will_paginate @articles, class: "pagination" %>
 <%= render "articles_list", articles: @articles %>

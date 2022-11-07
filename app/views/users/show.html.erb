@@ -1,4 +1,4 @@
-<%= render "shared/page_header", heading: "#{@user.username}'s profile", actions: [
+<%= render "shared/page_header", heading: "#{@user.username}'s profile", actions: is_current_user?(@user) ? [
   {
     title: "Edit",
     path: edit_user_path(@user),
@@ -12,7 +12,7 @@
     class: "btn btn-danger",
     turbo_data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
   }
-] %>
+] : [] %>
 
 <div class="flex justify-start items-center mt-8">
   <div class="flex-none rounded-full overflow-hidden mr-4">

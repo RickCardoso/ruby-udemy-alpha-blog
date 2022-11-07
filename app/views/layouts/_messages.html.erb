@@ -1,6 +1,6 @@
 <div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-col-reverse gap-2 z-50">
   <% flash.each do |name, msg| %>
-    <div class="bg-green-300 text-black text-sm rounded-md overflow-hidden py-2 px-4 shadow-md">
+    <div class="flash-message <%= name %>">
       <%= msg %>
     </div>
   <% end %>

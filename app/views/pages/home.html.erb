@@ -4,6 +4,9 @@
   <div class="text-center max-w-xs p-8">
     <h1 class="text-3xl">Alpha blog</h1>
     <p class="">This is the home page for the alpha blog application</p>
-    <%= link_to 'Sign up' , signup_path, class: "btn btn-primary inline-flex mt-4" %>
+    <div class="flex justify-center items-center gap-4 mt-4">
+      <%= link_to 'Sign in' , login_path, class: "btn" %>
+      <%= link_to 'Sign up' , signup_path, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>

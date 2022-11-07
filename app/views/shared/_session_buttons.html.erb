@@ -1,0 +1,32 @@
+<script type="text/javascript">
+  function toggleDropdown(id) {
+    var dropdown = document.getElementById(`dropdown-${id}`);
+    if (dropdown.classList.contains('hidden')) {
+      dropdown.classList.remove('hidden');
+    } else {
+      dropdown.classList.add('hidden');
+    }
+  }
+</script>
+
+<% if logged_in? %>
+  <div class="relative inline-block text-left">
+    <div>
+      <button class="navbar__link flex items-center justify-center gap-2" id="menu-button-<%= id %>" aria-expanded="true" aria-haspopup="true" type="button" onclick="toggleDropdown('<%= id %>')">
+        <div class="flex-none rounded-full overflow-hidden">
+          <%= gravatar_for current_user, size: 30 %>
+        </div>
+        <%= current_user.username %>
+      </button>
+    </div>
+    <div class="dropdown hidden" id="dropdown-<%= id %>" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+      <div class="py-1 flex flex-col gap-1" role="none">
+        <%= link_to "View profile", current_user, class: "dropdown__button" %>
+        <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown__button" %>
+        <%= link_to 'Sign out', logout_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "dropdown__button" %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <%= link_to 'Sign in', login_path, class: "navbar__link" %>
+<% end %>
