@@ -1,4 +1,4 @@
-<%= render "shared/page_header", heading: @article.title, actions: is_current_user?(@article.user) ? [
+<%= render "shared/page_header", heading: @article.title, actions: is_user_permitted?(@article.user) ? [
   {
     title: "Edit",
     path: edit_article_path(@article),

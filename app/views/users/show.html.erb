@@ -1,4 +1,4 @@
-<%= render "shared/page_header", heading: "#{@user.username}'s profile", actions: is_current_user?(@user) ? [
+<%= render "shared/page_header", heading: "#{@user.username}'s profile", actions: is_user_permitted?(@user) ? [
   {
     title: "Edit",
     path: edit_user_path(@user),

@@ -15,7 +15,7 @@
         </div>
         <div class="flex gap-1 -m-1 sm:text-2xl">
           <%= link_to render(IconComponent.new(symbol: 'open_in_full')), user, class: "action-btn" %>
-          <% if is_current_user?(user) %>
+          <% if is_user_permitted?(user) %>
             <%= link_to render(IconComponent.new(symbol: 'edit')), edit_user_path(user), class: "action-btn" %>
             <%= link_to render(IconComponent.new(symbol: 'delete')), user, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "action-btn text-red-600" %>
           <% end %>

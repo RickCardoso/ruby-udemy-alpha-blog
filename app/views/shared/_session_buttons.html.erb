@@ -17,6 +17,9 @@
           <%= gravatar_for current_user, size: 30 %>
         </div>
         <%= current_user.username %>
+        <% if current_user.admin? %>
+          <span> [admin]</span>
+        <% end %>
       </button>
     </div>
     <div class="dropdown hidden" id="dropdown-<%= id %>" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
