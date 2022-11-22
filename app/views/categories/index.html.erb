@@ -1,0 +1,32 @@
+<%= render "shared/page_header", heading: "Categories page", actions: logged_in? ? [
+  {
+    title: "Create new Category",
+    path: new_category_path,
+    icon: "post_add",
+    class: "btn btn-primary"
+  }
+] : [] %>
+
+<% if @categories.empty? %>
+  <div class="alert alert-info">
+    No categories found.
+  </div>
+<% else %>
+  <%= will_paginate @categories, class: "pagination" %>
+  <div class="flex flex-col gap-8 my-8">
+    <% @categories.each do |category| %>
+      <div class="flex justify-start items-start sm:items-center">
+        <div class="flex flex-1 justify-between items-start gap-4">
+          <div class="flex flex-col gap-1">
+            <h3 class="font-semibold sm:text-lg"><%= category.name %></h3>
+            <p class="text-xs sm:text-sm"><%= pluralize(category.articles.count, "article") %> written</p>
+          </div>
+          <div class="flex gap-1 -m-1 sm:text-2xl">
+            <%= link_to render(IconComponent.new(symbol: 'open_in_full')), category, class: "action-btn", aria: { label: category.name } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= will_paginate @categories, class: "pagination" %>
+<% end %>

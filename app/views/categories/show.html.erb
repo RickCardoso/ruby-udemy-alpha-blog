@@ -1,0 +1,5 @@
+<%= render "shared/page_header", heading: "#{@category.name} articles" %>
+
+<%= will_paginate @articles, class: "pagination" %>
+<%= render "articles/articles_list", articles: @articles %>
+<%= will_paginate @articles, class: "pagination" %>

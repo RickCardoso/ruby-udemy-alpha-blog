@@ -7,6 +7,12 @@
   }
 ] : [] %>
 
-<%= will_paginate @articles, class: "pagination" %>
-<%= render "articles_list", articles: @articles %>
-<%= will_paginate @articles, class: "pagination" %>
+<% if @articles.empty? %>
+  <div class="alert alert-info">
+    No articles found.
+  </div>
+<% else %>
+  <%= will_paginate @articles, class: "pagination" %>
+  <%= render "articles_list", articles: @articles %>
+  <%= will_paginate @articles, class: "pagination" %>
+<% end %>

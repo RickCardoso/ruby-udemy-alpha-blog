@@ -1,23 +1,27 @@
 <div class="flex flex-col gap-8">
-  <% articles.each do |article| %>
-    <div class="rounded-xl bg-zinc-300 text-black overflow-hidden shadow-md w-full p-6">
-      <div class="flex justify-between items-start gap-4">
-        <div>
-          <h3 class="font-semibold text-lg"><%= article.title %></h3>
-          <% if article.user %>
-            <p class="text-sm text-zinc-700">by <%= link_to "#{article.user.username} [#{article.user.email}]", article.user %></p>
-          <% end %>
+  <% if articles.empty? %>
+    <p class="text-gray-500 italic">No articles here yet.</p>
+  <% else %>
+    <% articles.each do |article| %>
+      <div class="rounded-xl bg-zinc-300 text-black overflow-hidden shadow-md w-full p-6">
+        <div class="flex justify-between items-start gap-4">
+          <div>
+            <h3 class="font-semibold text-lg"><%= article.title %></h3>
+            <% if article.user %>
+              <p class="text-sm text-zinc-700">by <%= link_to "#{article.user.username} [#{article.user.email}]", article.user %></p>
+            <% end %>
+          </div>
+          <div class="flex gap-1 -m-1">
+            <%= link_to render(IconComponent.new(symbol: 'open_in_full')), article, class: "action-btn" %>
+            <% if is_user_permitted?(article.user) %>
+              <%= link_to render(IconComponent.new(symbol: 'edit')), edit_article_path(article), class: "action-btn" %>
+              <%= link_to render(IconComponent.new(symbol: 'delete')), article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "action-btn text-red-600" %>
+            <% end %>
+          </div>
         </div>
-        <div class="flex gap-1 -m-1">
-          <%= link_to render(IconComponent.new(symbol: 'open_in_full')), article, class: "action-btn" %>
-          <% if is_user_permitted?(article.user) %>
-            <%= link_to render(IconComponent.new(symbol: 'edit')), edit_article_path(article), class: "action-btn" %>
-            <%= link_to render(IconComponent.new(symbol: 'delete')), article, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "action-btn text-red-600" %>
-          <% end %>
-        </div>
-      </div>
 
-      <p class="mt-2 whitespace-nowrap text-ellipsis overflow-hidden"><%= article.description %></p>
-    </div>
+        <p class="mt-2 whitespace-nowrap text-ellipsis overflow-hidden"><%= article.description %></p>
+      </div>
+    <% end %>
   <% end %>
 </div>

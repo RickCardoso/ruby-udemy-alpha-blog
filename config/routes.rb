@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   get "signup", to: "users#new"
   resources :users, except: [:new]
+  resources :categories, except: [:edit, :destroy]
   
   resources :articles
   get 'login', to: 'sessions#new'
