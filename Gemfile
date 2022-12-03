@@ -51,8 +51,6 @@ group :development, :test do
 
   # Use sqlite3 as the database for Active Record
   gem "sqlite3", "~> 1.4"
-
-  gem "faker", "~> 3.0"
 end
 
 group :development do
@@ -83,3 +81,5 @@ gem "view_component", "~> 2.75"
 gem "will_paginate", "~> 3.3"
 
 gem "ffi", "~> 1.15"
+
+gem "faker", "~> 3.0"
