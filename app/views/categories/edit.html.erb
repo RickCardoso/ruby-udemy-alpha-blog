@@ -1,0 +1,12 @@
+<%= render "shared/page_header", heading: "Edit category", actions: [
+  {
+    title: "Delete",
+    path: @category,
+    icon: "delete",
+    class: "btn btn-danger",
+    turbo_data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+  }
+] %>
+
+<%= render 'form' %>
+

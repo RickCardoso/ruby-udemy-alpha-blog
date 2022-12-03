@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   def create
@@ -26,6 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
   end
 
   def update
@@ -51,7 +53,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, category_ids: [])
   end
 
   def require_user_is_author

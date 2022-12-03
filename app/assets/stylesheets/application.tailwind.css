@@ -26,7 +26,7 @@
   .input {
     @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-purple-400 sm:text-sm bg-transparent;
   }
-  
+
   .input__wrapper {
     @apply my-4 flex flex-col gap-2;
   }
@@ -109,5 +109,13 @@
 
   [class^="material-symbols"] {
     font-size: 1em !important;
-  }	
+  }
+
+  select.input {
+    @apply px-0 py-2;
+  }
+
+  select.input option {
+    @apply px-4 py-2;
+  }
 }

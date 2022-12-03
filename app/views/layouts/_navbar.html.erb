@@ -40,6 +40,7 @@
 
         <div class="space-y-1 px-2 pt-2 pb-3">
           <%= link_to 'Articles', articles_path, class: "text-white block text-lg px-4 py-2 rounded-md hover:text-purple-400 hover:bg-white hover:bg-opacity-20" %>
+          <%= link_to 'Categories', categories_path, class: "text-white block text-lg px-4 py-2 rounded-md hover:text-purple-400 hover:bg-white hover:bg-opacity-20" %>
           <%= link_to 'Users', users_path, class: "text-white block text-lg px-4 py-2 rounded-md hover:text-purple-400 hover:bg-white hover:bg-opacity-20" %>
           <%= link_to 'About' , about_path, class: "text-white block text-lg px-4 py-2 rounded-md hover:text-purple-400 hover:bg-white hover:bg-opacity-20" %>
         </div>
@@ -57,6 +58,7 @@
       </div>
       <div class="flex flex-none items-center gap-2 -mr-2">
         <%= link_to 'Articles', articles_path, class: "navbar__link" %>
+        <%= link_to 'Categories', categories_path, class: "navbar__link" %>
         <%= link_to 'Users', users_path, class: "navbar__link" %>
         <%= link_to 'About', about_path, class: "navbar__link" %>
         <%= render "shared/session_buttons", id: "desktop-session" %>

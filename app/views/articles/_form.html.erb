@@ -7,6 +7,10 @@
     <%= f.label :description, class: "label" %>
     <%= f.text_area :description, class: "input", rows: 10 %>
   </div>
+  <div class="input__wrapper">
+    <%= f.label :category, class: "label" %>
+    <%= f.collection_select :category_ids, @categories, :id, :name, {}, { class: 'input', multiple: true } %>
+  </div>
 
   <%= render "shared/errors", obj: @article %>
 
